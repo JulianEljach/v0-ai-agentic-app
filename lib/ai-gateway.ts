@@ -16,14 +16,12 @@ export const aiModels = {
     apiKey: VERCEL_AI_GATEWAY_KEY,
   }),
 
-  // Anthropic models with function calling support - using compatible version
-  "claude-3-5-sonnet": anthropic("claude-3-5-sonnet-20240620", {
+  "claude-3-5-sonnet": anthropic("claude-3-5-sonnet-20241022", {
     baseURL: `${VERCEL_AI_GATEWAY_URL}/anthropic/v1`,
     apiKey: VERCEL_AI_GATEWAY_KEY,
   }),
 
-  // Google models with function calling support - using stable version
-  "gemini-1.5-pro": google("gemini-1.5-pro", {
+  "gemini-1.5-pro": google("gemini-1.5-pro-latest", {
     baseURL: `${VERCEL_AI_GATEWAY_URL}/google/v1`,
     apiKey: VERCEL_AI_GATEWAY_KEY,
   }),
@@ -31,7 +29,7 @@ export const aiModels = {
 
 export type AIModelKey = keyof typeof aiModels
 
-export const defaultModel: AIModelKey = "gpt-4o"
+export const defaultModel: AIModelKey = "gpt-4o-mini"
 
 export const modelCapabilities = {
   "gpt-4o": {

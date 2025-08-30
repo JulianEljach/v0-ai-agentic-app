@@ -1,4 +1,3 @@
-import { streamText, convertToCoreMessages } from "ai"
 import type { NextRequest } from "next/server"
 import { aiModels, defaultModel, type AIModelKey } from "@/lib/ai-gateway"
 import { createMCPTools } from "@/lib/mcp-tools"
@@ -7,6 +6,8 @@ import { agenticOrchestrator } from "@/lib/agentic-orchestrator"
 
 export async function POST(req: NextRequest) {
   try {
+    const { streamText, convertToCoreMessages } = await import("ai")
+
     const { messages, data } = await req.json()
 
     // Get MCP context and model selection from the request
