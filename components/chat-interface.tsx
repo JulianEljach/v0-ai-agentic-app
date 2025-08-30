@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useChat } from "ai/react"
+import { useChat } from "@ai-sdk/react"
 import { Message, MessageContent, MessageList } from "@/components/ui/message"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
